@@ -40,7 +40,7 @@ async function bootstrap() {
 
   const configService = app.get(ConfigService);
   await app.listen(configService.get<number>('port'));
-  console.log(configService.get<string>('NODE_ENV'));
+  console.log('WORK ENVIRONMENT : ', configService.get<string>('NODE_ENV'));
 
   if (module.hot) {
     module.hot.accept();
